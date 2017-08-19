@@ -8,10 +8,9 @@
 
     Private hasAlreadyRandomized As Boolean
 
-
+    
 
     Private applyTutorialKiller As Boolean ' FE7 only.
-    Private applyFixPatch As Boolean ' Klok's Fix Patch
 
 
     Private Sub OpenFileDialog1_FileOk(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
@@ -54,13 +53,8 @@
         ElseIf type = Utilities.GameType.GameTypeFE8 Then
             GameDetectionLabel.Text = "Game Detected: Fire Emblem 8"
             RandomizeButton.Enabled = True
-
-            inputFile.Seek(&H2BA6, IO.SeekOrigin.Begin)
-            Dim notPatchedYet As Boolean = inputFile.ReadByte() = &H03
-            GameSpecificCheckbox.Text = "Apply Klok's Fix Patch"
-            GameSpecificCheckbox.Show()
-            GameSpecificCheckbox.Enabled = notPatchedYet
-            GameSpecificCheckbox.Checked = False
+            GameSpecificCheckbox.Hide()
+            applyTutorialKiller = False
         Else
             GameDetectionLabel.Text = "Unknown Game (Code: " + Convert.ToChar(gameCode.Item(0)) + Convert.ToChar(gameCode.Item(1)) + Convert.ToChar(gameCode.Item(2)) + Convert.ToChar(gameCode.Item(3)) + ")"
             RandomizeButton.Enabled = False
@@ -649,7 +643,7 @@ StartOver:
             End If
 
             If RandomizeSettings.shouldRandomizeGrowths Then
-                character.randomizeGrowths(RandomizeSettings.growthsVariance, RandomizeSettings.shouldForceMinimumGrowth, RandomizeSettings.shouldWeightHPGrowths, rng)
+                character.randomizeGrowths(RandomizeSettings.growthsVariance, RandomizeSettings.shouldForceMinimumGrowth, RandomizeSettings.shouldWeightHPGrowths, RandomizeSettings.minimumGrowth, rng)
             End If
 
             If RandomizeSettings.shouldRandomizeCON Then
@@ -1651,16 +1645,6 @@ StartOver:
             End If
         End If
 
-        If type = Utilities.GameType.GameTypeFE8 And applyFixPatch Then
-            Dim result As Boolean = Patcher.applyUPSPatch(OpenFileDialog1.FileName, "FE8 Otaku Fix Patch V0.8.ups")
-            If result = False Then
-                MsgBox("Fix Patch Failed. Continuing without applying patch...", MsgBoxStyle.OkOnly, "Notice")
-            Else
-                applyFixPatch = False
-                GameSpecificCheckbox.Checked = False
-            End If
-        End If
-
         Dim fileWriter = IO.File.OpenWrite(OpenFileDialog1.FileName)
 
         If Not IsNothing(specialMovementManager) Then
@@ -1799,6 +1783,7 @@ StartOver:
         RandomizeGrowthsToggle.Enabled = False
         GrowthVarianceControl.Enabled = False
         MinimumGrowthToggle.Enabled = False
+        MinimumGrowthControl.Enabled = False
         WeightedHPGrowthsToggle.Enabled = False
 
         RandomizeBasesToggle.Enabled = False
@@ -1847,8 +1832,6 @@ StartOver:
         ChangelogBrowseButton.Enabled = False
 
         RandomizeButton.Enabled = False
-
-        GameSpecificCheckbox.Enabled = False
     End Sub
 
     Private Sub reenableAllControls()
@@ -1857,6 +1840,7 @@ StartOver:
         RandomizeGrowthsToggle.Enabled = True
         GrowthVarianceControl.Enabled = RandomizeGrowthsToggle.Checked
         MinimumGrowthToggle.Enabled = RandomizeGrowthsToggle.Checked
+        MinimumGrowthControl.Enabled = RandomizeGrowthsToggle.Checked
         WeightedHPGrowthsToggle.Enabled = RandomizeGrowthsToggle.Checked
 
         RandomizeBasesToggle.Enabled = True
@@ -1906,8 +1890,6 @@ StartOver:
         SaveChangelogCheckbox.Enabled = True
         ChangelogBrowseButton.Enabled = SaveChangelogCheckbox.Checked
 
-        GameSpecificCheckbox.Enabled = (type <> Utilities.GameType.GameTypeFE7)
-
         RandomizeButton.Enabled = type <> Utilities.GameType.GameTypeUnknown
     End Sub
 
@@ -1916,6 +1898,7 @@ StartOver:
 
         GrowthVarianceControl.Enabled = RandomizeSettings.shouldRandomizeGrowths
         MinimumGrowthToggle.Enabled = RandomizeSettings.shouldRandomizeGrowths
+        MinimumGrowthControl.Enabled = RandomizeSettings.shouldRandomizeGrowths
         WeightedHPGrowthsToggle.Enabled = RandomizeSettings.shouldRandomizeGrowths
     End Sub
 
@@ -1930,6 +1913,16 @@ StartOver:
 
     Private Sub MinimumGrowthToggle_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MinimumGrowthToggle.CheckedChanged
         RandomizeSettings.shouldForceMinimumGrowth = MinimumGrowthToggle.Checked
+        MinimumGrowthControl.Enabled = RandomizeSettings.shouldForceMinimumGrowth
+    End Sub
+
+    Private Sub MinimumGrowthControl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MinimumGrowthControl.ValueChanged
+        Dim currentValue = MinimumGrowthControl.Value
+        If currentValue Mod 5 <> 0 Then
+            currentValue = currentValue + (5 - (currentValue Mod 5))
+        End If
+        MinimumGrowthControl.Value = currentValue
+        RandomizeSettings.minimumGrowth = currentValue
     End Sub
 
     Private Sub WeightedHPGrowthsToggle_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WeightedHPGrowthsToggle.CheckedChanged
@@ -2193,6 +2186,29 @@ StartOver:
 
     End Sub
 
+    Private Sub FilenameTextBox_TextChanged(sender As Object, e As EventArgs) Handles FilenameTextBox.TextChanged
+        If SaveChangelogCheckbox.Checked = True Then
+            Dim filepath As String() = Split(FilenameTextBox.Text, "\")
+            Dim filename As String = Split(filepath(filepath.Length - 1), ".")(0)
+
+            Dim filepathArray As String() = Split(ChangelogPathField.Text, "\")
+            Dim builder As New System.Text.StringBuilder
+
+            For i As Integer = 0 To filepathArray.Length - 2
+                builder.Append(filepathArray(i))
+                If i = filepathArray.Length - 2 Then
+                Else
+                    builder.Append("\")
+                End If
+            Next
+
+            Dim filepathCut As String = builder.ToString
+
+            RandomizeSettings.changelogPath = filepathCut + "\" + filename + ".html"
+            ChangelogPathField.Text = filepathCut + "\" + filename + ".html"
+        End If
+    End Sub
+
     Private Sub ChangelogBrowseButton_Click(sender As Object, e As EventArgs) Handles ChangelogBrowseButton.Click
         Dim result As DialogResult = FolderBrowserDialog1.ShowDialog()
         processChangelogPathSelection(result)
@@ -2200,14 +2216,18 @@ StartOver:
 
     Private Sub processChangelogPathSelection(ByVal result As DialogResult)
         If result = DialogResult.OK Then
-            RandomizeSettings.changelogPath = FolderBrowserDialog1.SelectedPath() + "\Changelog.html"
-            ChangelogPathField.Text = FolderBrowserDialog1.SelectedPath() + "\Changelog.html"
+            Dim filepath As String() = Split(FilenameTextBox.Text, "\")
+            Dim filename As String = Split(filepath(filepath.Length - 1), ".")(0)
+
+            RandomizeSettings.changelogPath = FolderBrowserDialog1.SelectedPath() + "\" + filename + ".html"
+            ChangelogPathField.Text = FolderBrowserDialog1.SelectedPath() + "\" + filename + ".html"
 
             Dim recordKeeper As RecordKeeper = New RecordKeeper()
 
             recordKeeper.writeChangesToDiskAtPath(RandomizeSettings.changelogPath)
 
-        ElseIf result = DialogResult.Cancel
+        ElseIf result = DialogResult.Cancel Then
+
             If IsNothing(RandomizeSettings.changelogPath) Then
                 SaveChangelogCheckbox.Checked = False
             ElseIf RandomizeSettings.changelogPath.Equals("") Then
@@ -2246,14 +2266,16 @@ StartOver:
                                     & "and the amount entered (in increments of 5%) is either" + vbCrLf _
                                     & "added to or subtracted from a character's total growths." + vbCrLf _
                                     & "Maximum variance is 100.")
-        MinimumGrowthTooltip.SetToolTip(MinimumGrowthToggle, "Before redistributing growths, 5% is assigned to each" + vbCrLf _
-                                        & "growth area and subtracted from the total. This ensures" + vbCrLf _
-                                        & "the lowest growth a stat can have is 5%.")
-        WeightedHPTooltip.SetToolTip(WeightedHPGrowthsToggle, "While redistributing growths, if the randomized stat is HP," + vbCrLf _
+        MinimumGrowthTooltip.SetToolTip(MinimumGrowthToggle, "Before redistributing growths, a certain % is assigned" + vbCrLf _
+                                        & "to each growth area and subtracted from the total." + vbCrLf _
+                                        & "This ensures the lowest growth a stat can have is x%." + vbCrLf _
+                                        & "You may define what that minimum is in the next field")
+        MinimumGrowthTooltip.SetToolTip(MinimumGrowthControl, "Sets the minimum possible growth score to a desired amount")
+        WeightedHPTooltip.SetToolTip(WeightedHPGrowthsToggle, "While redistributing growths, if the randomized stat Is HP," + vbCrLf _
                                      & "then it will gain an additional 10% on top of the randomized amount." + vbCrLf _
                                      & "This makes it more likely HP will be the higher growth.")
 
-        BasesTooltip.SetToolTip(RandomizeBasesToggle, "Applies random bases to all characters (playable and bosses)." + vbCrLf _
+        BasesTooltip.SetToolTip(RandomizeBasesToggle, "Applies random bases to all characters (playable And bosses)." + vbCrLf _
                                 & "A character's original bases are added together and then" + vbCrLf _
                                 & "redistributed across all stats to generate their new bases." + vbCrLf _
                                 & "Redistribution is done by first randomizing a stat." + vbCrLf _
@@ -2361,9 +2383,7 @@ StartOver:
                                       & "Note that dialogue referring to characters does not change.")
     End Sub
 
-    Private Sub GameSpecificCheckbox_CheckedChanged(sender As Object, e As EventArgs) Handles GameSpecificCheckbox.CheckedChanged
-        If type = Utilities.GameType.GameTypeFE8 Then
-            applyFixPatch = GameSpecificCheckbox.Checked
-        End If
+    Private Sub Label19_Click(sender As Object, e As EventArgs) Handles Label19.Click
+
     End Sub
 End Class

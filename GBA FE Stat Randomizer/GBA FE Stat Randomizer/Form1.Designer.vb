@@ -130,6 +130,8 @@ Partial Class Form1
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.ChangelogPathField = New System.Windows.Forms.TextBox()
         Me.ChangelogBrowseButton = New System.Windows.Forms.Button()
+        Me.MinimumGrowthControl = New System.Windows.Forms.NumericUpDown()
+        Me.Label19 = New System.Windows.Forms.Label()
         CType(Me.GrowthVarianceControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BaseVarianceControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MightVarianceControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,6 +151,7 @@ Partial Class Form1
         CType(Me.EnemyBuffControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MinimumDurabilityControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CONVarianceControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MinimumGrowthControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FilenameTextBox
@@ -196,7 +199,7 @@ Partial Class Form1
         'RandomizeBasesToggle
         '
         Me.RandomizeBasesToggle.AutoSize = True
-        Me.RandomizeBasesToggle.Location = New System.Drawing.Point(16, 179)
+        Me.RandomizeBasesToggle.Location = New System.Drawing.Point(16, 191)
         Me.RandomizeBasesToggle.Name = "RandomizeBasesToggle"
         Me.RandomizeBasesToggle.Size = New System.Drawing.Size(111, 17)
         Me.RandomizeBasesToggle.TabIndex = 4
@@ -207,7 +210,7 @@ Partial Class Form1
         '
         Me.RandomizeCONToggle.AutoSize = True
         Me.RandomizeCONToggle.Enabled = False
-        Me.RandomizeCONToggle.Location = New System.Drawing.Point(16, 232)
+        Me.RandomizeCONToggle.Location = New System.Drawing.Point(16, 244)
         Me.RandomizeCONToggle.Name = "RandomizeCONToggle"
         Me.RandomizeCONToggle.Size = New System.Drawing.Size(105, 17)
         Me.RandomizeCONToggle.TabIndex = 6
@@ -227,7 +230,7 @@ Partial Class Form1
         'RandomizeAffinityToggle
         '
         Me.RandomizeAffinityToggle.AutoSize = True
-        Me.RandomizeAffinityToggle.Location = New System.Drawing.Point(14, 389)
+        Me.RandomizeAffinityToggle.Location = New System.Drawing.Point(14, 401)
         Me.RandomizeAffinityToggle.Name = "RandomizeAffinityToggle"
         Me.RandomizeAffinityToggle.Size = New System.Drawing.Size(113, 17)
         Me.RandomizeAffinityToggle.TabIndex = 8
@@ -255,7 +258,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 199)
+        Me.Label3.Location = New System.Drawing.Point(41, 211)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 13)
         Me.Label3.TabIndex = 11
@@ -264,7 +267,7 @@ Partial Class Form1
         'BaseVarianceControl
         '
         Me.BaseVarianceControl.Enabled = False
-        Me.BaseVarianceControl.Location = New System.Drawing.Point(123, 197)
+        Me.BaseVarianceControl.Location = New System.Drawing.Point(123, 209)
         Me.BaseVarianceControl.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.BaseVarianceControl.Name = "BaseVarianceControl"
         Me.BaseVarianceControl.Size = New System.Drawing.Size(50, 20)
@@ -275,9 +278,9 @@ Partial Class Form1
         Me.MinimumGrowthToggle.AutoSize = True
         Me.MinimumGrowthToggle.Location = New System.Drawing.Point(44, 121)
         Me.MinimumGrowthToggle.Name = "MinimumGrowthToggle"
-        Me.MinimumGrowthToggle.Size = New System.Drawing.Size(157, 17)
+        Me.MinimumGrowthToggle.Size = New System.Drawing.Size(134, 17)
         Me.MinimumGrowthToggle.TabIndex = 13
-        Me.MinimumGrowthToggle.Text = "Force Minimum Growth (5%)"
+        Me.MinimumGrowthToggle.Text = "Force Minimum Growth"
         Me.MinimumGrowthToggle.UseVisualStyleBackColor = True
         '
         'RandomizeClassesToggle
@@ -492,7 +495,7 @@ Partial Class Form1
         'WeightedHPGrowthsToggle
         '
         Me.WeightedHPGrowthsToggle.AutoSize = True
-        Me.WeightedHPGrowthsToggle.Location = New System.Drawing.Point(44, 145)
+        Me.WeightedHPGrowthsToggle.Location = New System.Drawing.Point(44, 168)
         Me.WeightedHPGrowthsToggle.Name = "WeightedHPGrowthsToggle"
         Me.WeightedHPGrowthsToggle.Size = New System.Drawing.Size(154, 17)
         Me.WeightedHPGrowthsToggle.TabIndex = 37
@@ -502,7 +505,7 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(41, 277)
+        Me.Label13.Location = New System.Drawing.Point(41, 289)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 13)
         Me.Label13.TabIndex = 38
@@ -510,7 +513,7 @@ Partial Class Form1
         '
         'MinimumCONControl
         '
-        Me.MinimumCONControl.Location = New System.Drawing.Point(116, 275)
+        Me.MinimumCONControl.Location = New System.Drawing.Point(116, 287)
         Me.MinimumCONControl.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.MinimumCONControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.MinimumCONControl.Name = "MinimumCONControl"
@@ -521,7 +524,7 @@ Partial Class Form1
         'RandomizeMOVToggle
         '
         Me.RandomizeMOVToggle.AutoSize = True
-        Me.RandomizeMOVToggle.Location = New System.Drawing.Point(16, 309)
+        Me.RandomizeMOVToggle.Location = New System.Drawing.Point(16, 321)
         Me.RandomizeMOVToggle.Name = "RandomizeMOVToggle"
         Me.RandomizeMOVToggle.Size = New System.Drawing.Size(106, 17)
         Me.RandomizeMOVToggle.TabIndex = 40
@@ -531,7 +534,7 @@ Partial Class Form1
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(41, 329)
+        Me.Label14.Location = New System.Drawing.Point(41, 341)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(75, 13)
         Me.Label14.TabIndex = 41
@@ -539,7 +542,7 @@ Partial Class Form1
         '
         'MinimumMOVControl
         '
-        Me.MinimumMOVControl.Location = New System.Drawing.Point(125, 327)
+        Me.MinimumMOVControl.Location = New System.Drawing.Point(125, 339)
         Me.MinimumMOVControl.Maximum = New Decimal(New Integer() {9, 0, 0, 0})
         Me.MinimumMOVControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.MinimumMOVControl.Name = "MinimumMOVControl"
@@ -550,7 +553,7 @@ Partial Class Form1
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(41, 354)
+        Me.Label15.Location = New System.Drawing.Point(41, 366)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(78, 13)
         Me.Label15.TabIndex = 43
@@ -558,7 +561,7 @@ Partial Class Form1
         '
         'MaximumMOVControl
         '
-        Me.MaximumMOVControl.Location = New System.Drawing.Point(125, 352)
+        Me.MaximumMOVControl.Location = New System.Drawing.Point(125, 364)
         Me.MaximumMOVControl.Maximum = New Decimal(New Integer() {9, 0, 0, 0})
         Me.MaximumMOVControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.MaximumMOVControl.Name = "MaximumMOVControl"
@@ -938,7 +941,7 @@ Partial Class Form1
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(41, 252)
+        Me.Label18.Location = New System.Drawing.Point(41, 264)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(75, 13)
         Me.Label18.TabIndex = 62
@@ -946,7 +949,7 @@ Partial Class Form1
         '
         'CONVarianceControl
         '
-        Me.CONVarianceControl.Location = New System.Drawing.Point(116, 250)
+        Me.CONVarianceControl.Location = New System.Drawing.Point(116, 262)
         Me.CONVarianceControl.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.CONVarianceControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.CONVarianceControl.Name = "CONVarianceControl"
@@ -1014,11 +1017,34 @@ Partial Class Form1
         Me.ChangelogBrowseButton.Text = "Browse..."
         Me.ChangelogBrowseButton.UseVisualStyleBackColor = True
         '
+        'MinimumGrowthControl
+        '
+        Me.MinimumGrowthControl.Enabled = False
+        Me.MinimumGrowthControl.Increment = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.MinimumGrowthControl.Location = New System.Drawing.Point(133, 139)
+        Me.MinimumGrowthControl.Maximum = New Decimal(New Integer() {35, 0, 0, 0})
+        Me.MinimumGrowthControl.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.MinimumGrowthControl.Name = "MinimumGrowthControl"
+        Me.MinimumGrowthControl.Size = New System.Drawing.Size(51, 20)
+        Me.MinimumGrowthControl.TabIndex = 69
+        Me.MinimumGrowthControl.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(41, 141)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(85, 13)
+        Me.Label19.TabIndex = 70
+        Me.Label19.Text = "Minimum Growth"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(586, 495)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.MinimumGrowthControl)
         Me.Controls.Add(Me.ChangelogBrowseButton)
         Me.Controls.Add(Me.ChangelogPathField)
         Me.Controls.Add(Me.SaveChangelogCheckbox)
@@ -1085,7 +1111,7 @@ Partial Class Form1
         Me.Controls.Add(Me.FilenameTextBox)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "GBA FE Randomizer v1.1.2 by OtakuReborn"
+        Me.Text = "GBA FE Randomizer v1.1.0 by OtakuReborn"
         CType(Me.GrowthVarianceControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BaseVarianceControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MightVarianceControl, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1106,6 +1132,7 @@ Partial Class Form1
         CType(Me.EnemyBuffControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MinimumDurabilityControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CONVarianceControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MinimumGrowthControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1216,4 +1243,6 @@ Partial Class Form1
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents ChangelogPathField As TextBox
     Friend WithEvents ChangelogBrowseButton As Button
+    Friend WithEvents MinimumGrowthControl As NumericUpDown
+    Friend WithEvents Label19 As Label
 End Class

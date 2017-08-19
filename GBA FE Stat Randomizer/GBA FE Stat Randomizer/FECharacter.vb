@@ -59,6 +59,8 @@ Public Class FECharacter
     Property classDisplayName As String
     Property gameType As Utilities.GameType
 
+    Property rolledVariance As Integer
+
     Enum CharacterAbility1 'Bitmaskable
         None = &H0
         MountedAidSystem = &H1
@@ -513,36 +515,46 @@ Public Class FECharacter
         End If
     End Sub
 
-    Public Sub randomizeGrowths(ByVal variance As Integer, ByVal useMinimumGrowth As Boolean, ByVal weightHPGrowth As Boolean, ByRef rng As Random)
+
+    Public Sub randomizeGrowths(ByVal variance As Integer, ByVal useMinimumGrowth As Boolean, ByVal weightHPGrowth As Boolean, ByVal minimumGrowth As Integer, ByRef rng As Random)
 
         Dim total = totalGrowths()
+        Dim previousTotal = total
 
         resetGrowths()
 
         If variance > 0 Then
+
             total += rng.Next(0, variance * 2) - variance
+            ' total += rng.Next(variance, variance * 2)
+
             If total Mod 5 <> 0 Then
                 ' Round to nearest increment of 5 if not already an increment of 5.
                 total += (5 - total Mod 5)
             End If
         End If
 
-        If useMinimumGrowth Then
-            hpGrowth = 5
-            strGrowth = 5
-            sklGrowth = 5
-            spdGrowth = 5
-            lckGrowth = 5
-            defGrowth = 5
-            resGrowth = 5
+        Dim rolled = total - previousTotal
+        rolledVariance = rolled
 
-            total -= 7 * 5
+        If useMinimumGrowth Then
+            ' MOD: *2
+            hpGrowth = minimumGrowth * 2
+            strGrowth = minimumGrowth
+            sklGrowth = minimumGrowth
+            spdGrowth = minimumGrowth
+            lckGrowth = minimumGrowth
+            defGrowth = minimumGrowth
+            resGrowth = minimumGrowth
+
+            ' MOD: 7 *
+            total -= 8 * minimumGrowth
         End If
 
         While total > 0
             ' Figure out which stat. Again, 7 stats.
             Dim stat = rng.Next(1, 8)
-            Dim amount = Math.Min(rng.Next(1, 11) * 5, total)
+            Dim amount = Math.Min(rng.Next(1, 2) * 5, total)
             If stat = 1 And hpGrowth <= 255 - amount Then
                 hpGrowth += amount
                 total -= amount
@@ -990,6 +1002,8 @@ Public Class FECharacter
         table.Add("Base RES", baseRes.ToString)
         table.Add("Base CON", baseCon.ToString)
 
+        table.Add("Total Bases", totalBases().ToString)
+
         table.Add("HP Growth", hpGrowth.ToString + "%")
         table.Add("STR/MAG Growth", strGrowth.ToString + "%")
         table.Add("SKL Growth", sklGrowth.ToString + "%")
@@ -997,6 +1011,9 @@ Public Class FECharacter
         table.Add("LCK Growth", lckGrowth.ToString + "%")
         table.Add("DEF Growth", defGrowth.ToString + "%")
         table.Add("RES Growth", resGrowth.ToString + "%")
+
+        table.Add("Growth Variance", rolledVariance.ToString + "%")
+        table.Add("Total Growths", totalGrowths().ToString + "%")
 
         table.Add("Weapon Ranks", IIf(weaponRankLetterForValue(swordLevel).Length > 0, weaponRankLetterForValue(swordLevel) + " - Sword" + vbTab, "") _
             & IIf(weaponRankLetterForValue(spearLevel).Length > 0, weaponRankLetterForValue(spearLevel) + " - Lance" + vbTab, "") _
@@ -1033,6 +1050,8 @@ Public Class FECharacter
         keyList.Add("Base RES")
         keyList.Add("Base CON")
 
+        keyList.Add("Total Bases")
+
         keyList.Add("HP Growth")
         keyList.Add("STR/MAG Growth")
         keyList.Add("SKL Growth")
@@ -1040,6 +1059,9 @@ Public Class FECharacter
         keyList.Add("LCK Growth")
         keyList.Add("DEF Growth")
         keyList.Add("RES Growth")
+
+        keyList.Add("Growth Variance")
+        keyList.Add("Total Growths")
 
         keyList.Add("Weapon Ranks")
 

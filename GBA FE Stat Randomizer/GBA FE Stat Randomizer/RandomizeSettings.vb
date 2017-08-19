@@ -16,6 +16,7 @@ Public Class RandomizeSettings
     Public Shared Property shouldRandomizeGrowths As Boolean
     Public Shared Property growthsVariance As Integer
     Public Shared Property shouldForceMinimumGrowth As Boolean
+    Public Shared Property minimumGrowth As Integer
     Public Shared Property shouldWeightHPGrowths As Boolean
 
     Public Shared Property shouldRandomizeBases As Boolean
@@ -66,7 +67,7 @@ Public Class RandomizeSettings
         Public Function fieldTable() As Hashtable Implements RecordKeeper.RecordableItem.fieldTable
             Dim table As Hashtable = New Hashtable()
 
-            table.Add("Randomize Growths", IIf(shouldRandomizeGrowths, "YES - Variance: " + growthsVariance.ToString + "% Minimum Growths? " + IIf(shouldForceMinimumGrowth, "YES", "NO") + " Weight HP Growths? " + IIf(shouldWeightHPGrowths, "YES", "NO"), "NO"))
+            table.Add("Randomize Growths", IIf(shouldRandomizeGrowths, "YES - Variance: " + growthsVariance.ToString + "% Minimum Growths? " + IIf(shouldForceMinimumGrowth, "YES (" + minimumGrowth.ToString() + "%)", "NO") + " Weight HP Growths? " + IIf(shouldWeightHPGrowths, "YES", "NO"), "NO"))
             table.Add("Randomize Bases", IIf(shouldRandomizeBases, "YES - Variance: " + baseVariance.ToString, "NO"))
             table.Add("Randomize CON", IIf(shouldRandomizeCON, "YES - Minimum CON: " + minimumCON.ToString, "NO"))
             table.Add("Randomize MOV", IIf(shouldRandomizeMOV, "YES - Minimum MOV: " + minimumMOV.ToString + " Maximum MOV: " + maximumMOV.ToString, "NO"))

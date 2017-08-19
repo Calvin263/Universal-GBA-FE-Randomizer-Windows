@@ -15,4 +15,54 @@ C:\Users\lushe_000\Documents\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Ran
 C:\Users\lushe_000\Documents\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.xml
 C:\Users\lushe_000\Documents\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.pdb
 C:\Users\lushe_000\Documents\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbprojResolveAssemblyReference.cache
-C:\Users\lushe_000\Documents\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\FE8 Otaku Fix Patch V0.8.ups
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.config
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.xml
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.pdb
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbprojResolveAssemblyReference.cache
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbproj.GenerateResource.Cache
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Arch's Tutorial Slayer.ups
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Tutorial Killer Patch.ups
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.application
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.pdb
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.xml
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Luc\Desktop\Universal-GBA-FE-Randomizer-Windows-1.1.0\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.application
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.config
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.xml
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.pdb
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Arch's Tutorial Slayer.ups
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Tutorial Killer Patch.ups
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.application
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbprojResolveAssemblyReference.cache
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbproj.GenerateResource.Cache
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.application
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.pdb
+C:\Users\Calvin\Desktop\Utilities\Fire Emblem Randomizer\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.xml
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.config
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.xml
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.pdb
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Arch's Tutorial Slayer.ups
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\Tutorial Killer Patch.ups
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.application
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.exe
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.pdb
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\bin\Release\GBA FE Randomizer.xml
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbprojResolveAssemblyReference.cache
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.vbproj.GenerateResource.Cache
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.exe.manifest
+C:\Users\Calvin\Desktop\Code\Universal-GBA-FE-Randomizer-Windows\GBA FE Stat Randomizer\GBA FE Stat Randomizer\obj\x86\Release\GBA FE Randomizer.application
